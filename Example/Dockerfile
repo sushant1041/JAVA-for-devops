@@ -4,7 +4,7 @@ FROM openjdk:11-jdk-slim
 WORKDIR /app
 
 # Copy the files from the host file system to the image file system
-COPY HelloWorld.java
+COPY . /app
 
 # Install the necessary packages
 RUN apt-get update && apt-get install openjdk-11-jdk
