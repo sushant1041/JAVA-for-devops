@@ -7,8 +7,6 @@ WORKDIR /app
 COPY . /app
 
 # Install the necessary packages
-RUN apt-get update && apt-get install openjdk-11-jdk
-
 RUN javac HelloWorld.java
 
 # Run a command to start the application
