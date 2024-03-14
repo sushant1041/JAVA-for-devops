@@ -1,16 +1,15 @@
-FROM ubuntu:latest
+FROM openjdk:11-jdk-slim
 
 # Set the working directory in the image
 WORKDIR /app
 
 # Copy the files from the host file system to the image file system
-COPY . /app
+COPY HelloWorld.java
 
 # Install the necessary packages
-RUN apt-get update && apt-get install -y python3 python3-pip
+RUN apt-get update && apt-get install openjdk-11-jdk
 
-# Set environment variables
-ENV NAME World
+RUN javac HelloWorld.java
 
 # Run a command to start the application
-CMD ["python3", "app.py"]
+CMD ["java", "HelloWorld"]
